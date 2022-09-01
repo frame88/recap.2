@@ -1,4 +1,3 @@
-// Versione 1
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,22 +5,17 @@ import { Component } from '@angular/core';
   template: `
     <li
       *ngFor="let user of users"
-      [ngClass]="{
-        'male': user.gender === 'M',
-        'female': user.gender === 'F'
-      }"
+      [style.color]="user.gender === 'M' ? 'white' : null"
+      [style.backgroundColor]="user.gender === 'M' ? 'blue' : 'pink'"
+      [style.fontSize.px]="user.age"
     >{{user.name}}</li>
-  `,
-  styles: [`
-    .male { background-color: blue; color: white}
-    .female { background-color: pink }
-  `]
+  `
 })
 export class AppComponent {
   users = [
-    { id: 1, name: 'Fabio', gender: 'M' },
-    { id: 2, name: 'Lisa', gender: 'F' },
-    { id: 3, name: 'Lorenzo', gender: 'M' },
-    { id: 4, name: 'Silvia', gender: 'F' }
+    { id: 1, name: 'Fabio', gender: 'M', age: 30 },
+    { id: 2, name: 'Lisa', gender: 'F', age: 20 },
+    { id: 3, name: 'Lorenzo', gender: 'M', age: 10 },
+    { id: 4, name: 'Silvia', gender: 'F', age: 130 }
   ];
 }

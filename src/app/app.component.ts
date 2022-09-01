@@ -1,21 +1,33 @@
 import { Component } from '@angular/core';
-
+ 
 @Component({
-  selector: 'app-root',
-  template: `
-    <li
-      *ngFor="let user of users"
-      [style.color]="user.gender === 'M' ? 'white' : null"
-      [style.backgroundColor]="user.gender === 'M' ? 'blue' : 'pink'"
-      [style.fontSize.px]="user.age"
-    >{{user.name}}</li>
-  `
+   template: `
+   <li
+     *ngFor="let user of users"
+     [ngStyle]="getStyle(user)"
+   >{{user.name}}</li>
+ `
 })
 export class AppComponent {
-  users = [
-    { id: 1, name: 'Fabio', gender: 'M', age: 30 },
-    { id: 2, name: 'Lisa', gender: 'F', age: 20 },
-    { id: 3, name: 'Lorenzo', gender: 'M', age: 10 },
-    { id: 4, name: 'Silvia', gender: 'F', age: 130 }
-  ];
+   users: User[] = [
+       { id: 1, name: 'Fabio', age: 30, gender: 'M' },
+       { id: 2, name: 'Lisa', age: 20, gender: 'F' },
+       { id: 3, name: 'Lorenzo', age: 10, gender: 'M' },
+       { id: 4, name: 'Silvia', age: 130, gender: 'F' }
+   ];
+ 
+   getStyle(user:User) {
+       return {
+           backgroundColor: user.gender === 'M' ? 'black' : 'grey',
+           color: user.gender === 'M' ? 'blue' : 'pink',
+           fontSize: `${user.age}px`
+       };
+   }
+}
+ 
+interface User {
+   id: number,
+   name: string,
+   gender: string,
+   age: number,
 }

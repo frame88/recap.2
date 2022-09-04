@@ -1,32 +1,42 @@
-// La direttiva ngModel: 1way vs 2 way binding
-import { Component } from '@angular/core';
-
+// Animated Collapsable Panel: trigger, style, state e animate
+import { Component, OnInit } from '@angular/core';
+import { state, style, trigger, transition, animate } from '@angular/animations';
 @Component({
   selector: 'app-root',
+  animations: [
+    trigger('collapsable', [
+      state('opened', style ({
+        height: '200px'
+      })),
+      state('closed', style({
+        height: 0,
+        padding: 0
+      })),
+      transition('opened <=> closed', [
+        animate('0.7s cubic-bezier(0.83, 0, 0.17, 1)')
+      ])
+    ])
+  ],
   template: `
-    <input
-      type="text"
-      placeholder="Add User name"
-      [(ngModel)]="label"
-    >
-    <button (click)="add()">ADD</button>
-    <span>{{label}}</span>
-    <li *ngFor="let user of users">{{user}}</li>
+    <div class="container-fluid">
+      <div class="container text-center mt-5">
+        <div class="card">
+          <div class="card-header" (click)="toggle()">Titolo della card</div>
+        <div class="card-body" style='overflow: hidden' [@collapsable]="state">
+          With supporting text below as a natural lead-in to additional content.
+        </div>
+        </div>
+      </div>
+    </div>
   `
 })
 export class AppComponent {
-  label: string = 'guest';
-  users: string[] = [];
+  state = 'opened';
 
-  add() {
-    console.log(this.label);
-    // Add to list
-    this.users.push(this.label);
-    this.label = '';
+  toggle() {
+    this.state = this.state === 'opened' ? 'closed' : 'opened';
   }
 }
 
 
 
-// modifica all'esercizio con:
-// < span > {{ label }}</>

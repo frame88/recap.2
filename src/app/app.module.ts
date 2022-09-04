@@ -1,19 +1,16 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { FormsModule } from './app.component';
+import { AnimatedButtonComponent } from './components/animated-button/animated-button.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AnimatedButtonComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule,
     BrowserAnimationsModule
   ],
   providers: [],

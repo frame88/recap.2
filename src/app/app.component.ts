@@ -1,4 +1,4 @@
-// Navigation Bar
+// AngularCLI ei il modulo AppRoutingModule
 
 import { Component } from '@angular/core';
 
@@ -7,10 +7,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <div class="container text-center mt-5">
-      <app-navbar></app-navbar>
-      <hr>
-      <!-- <button routerLink="/contacts">contacts</button>
-      <button routerLink="/catalog">catalog</button> -->
+      <button routerLink="users">users button</button>
       <router-outlet></router-outlet>
     </div>
   `

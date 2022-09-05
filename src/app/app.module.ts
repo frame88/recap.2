@@ -7,6 +7,9 @@ import { CatalogComponent } from './features/catalog/catalog.component';
 import { ContactsComponent } from './features/contacts/contacts.component';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './core/navbar/navbar.component';
+import { AppRoutingModule } from './app-routing.module';
+import { UsersComponent } from './features/users/users.component';
+import { UserDetailsComponent } from './features/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -14,16 +17,14 @@ import { NavbarComponent } from './core/navbar/navbar.component';
     AnimatedButtonComponent,
     CatalogComponent,
     ContactsComponent,
-    NavbarComponent
+    NavbarComponent,
+    UsersComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot([
-      { path: 'catalog', component: CatalogComponent},
-      { path: 'contacts', component: ContactsComponent},
-      { path: '**', redirectTo: 'catalog' },
-    ])
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,13 +6,15 @@ import { AnimatedButtonComponent } from './components/animated-button/animated-b
 import { CatalogComponent } from './features/catalog/catalog.component';
 import { ContactsComponent } from './features/contacts/contacts.component';
 import { RouterModule } from '@angular/router';
+import { NavbarComponent } from './core/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnimatedButtonComponent,
     CatalogComponent,
-    ContactsComponent
+    ContactsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

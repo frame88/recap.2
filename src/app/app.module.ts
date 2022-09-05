@@ -3,15 +3,25 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AnimatedButtonComponent } from './components/animated-button/animated-button.component';
+import { CatalogComponent } from './features/catalog/catalog.component';
+import { ContactsComponent } from './features/contacts/contacts.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AnimatedButtonComponent
+    AnimatedButtonComponent,
+    CatalogComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot([
+      { path: 'catalog', component: CatalogComponent},
+      { path: 'contacts', component: ContactsComponent},
+      { path: '**', redirectTo: 'catalog' },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

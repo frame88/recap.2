@@ -10,6 +10,7 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UsersComponent } from './features/users/users.component';
 import { UserDetailsComponent } from './features/user-details/user-details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { UserDetailsComponent } from './features/user-details/user-details.compo
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],

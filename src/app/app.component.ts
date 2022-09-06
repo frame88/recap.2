@@ -1,5 +1,7 @@
-// AngularCLI ei il modulo AppRoutingModule
+// Passaggio parametri e ActivatedRoute
 
+// esercizio che chiama una lista di nomi con relative info (user-details)
+// se cliccati gli utenti restituiscono le informazioni
 import { Component } from '@angular/core';
 
 

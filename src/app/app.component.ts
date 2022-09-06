@@ -1,7 +1,14 @@
-// Passaggio parametri e ActivatedRoute
+// ActivatedRoute e Router API
 
-// esercizio che chiama una lista di nomi con relative info (user-details)
-// se cliccati gli utenti restituiscono le informazioni
+// esercizio che permette di passare tra un utente e l'altro tramite un
+// button next
+
+// con una mia piccola modifica che permette al ciclo di ricominciare,
+// e quindi una volta arrivati all'utente 12° si riparte dal 1°. 
+// Qualcosa non quadra però, perchè arrivati al 12° devo cliccare 3 volte
+// per far ripartire il ciclo dall'inizio, e dopo i 3 click parte dal
+// secondo users della lista, anzichè dal primo 
+import { LocationStrategy } from '@angular/common';
 import { Component } from '@angular/core';
 
 
